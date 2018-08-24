@@ -1,5 +1,6 @@
 package com.martinsvitols.coderswag.Controller
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -19,7 +20,10 @@ class ProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_products)
 
         val categoryType = intent.getStringExtra(EXTRA_CATEGORY)
-        adapter = ProductsAdapter(this, DataService.getProducts(categoryType))
+        adapter = ProductsAdapter(this, DataService.getProducts(categoryType)) {product ->
+            val itemIntent = Intent(this, ItemActivity::class.java)
+            startActivity(itemIntent)
+        }
 
         var spanCount = 2
         val orientation = resources.configuration.orientation

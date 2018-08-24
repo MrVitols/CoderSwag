@@ -3,4 +3,5 @@
     <string name="categories">Categories</string>
     <string name="category_picture">category picture</string>
     <string name="products">Products</string>
+    <string name="add_to_cart">ADD TO CART!</string>
 </resources>
